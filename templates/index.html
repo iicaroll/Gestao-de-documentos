@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Documentação</h1>
+    <p class="subtitle">Envie documentos </p>
+
+    <!-- NOVO DOCUMENTO -->
+    <div class="card">
+        <h2>Novo Documento</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-icon">⬆</div>
+                <p>Arraste arquivos aqui ou <strong>clique para selecionar</strong></p>
+                <span id="fileName" class="file-name"></span>
+            </div>
+
+            <input type="file" id="fileInput" name="file" hidden required onchange="showFileName(event)">
+
+            <input type="text" name="titulo" placeholder="Título do documento" required>
+            <textarea name="descricao" placeholder="Descrição (opcional)"></textarea>
+
+            <button type="submit" class="btn-primary">Enviar Documento</button>
+        </form>
+    </div>
+
+    <!-- LISTA DE DOCUMENTOS -->
+    <h2 class="section-title">Documentos</h2>
+
+    {% for doc in documentos %}
+    <div class="document-card">
+
+        <div class="doc-header">
+            <div>
+                <h3>{{ doc.titulo }}</h3>
+                <small>{{ doc.data }}</small>
+            </div>
+            <a href="{{ url_for('download', filename=doc.nome_arquivo) }}" class="btn-link">Visualizar</a>
+        </div>
+
+        {% if doc.descricao %}
+            <p class="doc-description">{{ doc.descricao }}</p>
+        {% endif %}
+
+        <!-- HISTÓRICO DE COMENTÁRIOS -->
+        <div class="comentarios">
+            <h4>Histórico de Comentários</h4>
+
+            {% if doc.comentarios %}
+                {% for comentario in doc.comentarios %}
+                    <div class="comentario-item">
+                        <p>{{ comentario.texto }}</p>
+                        <small>{{ comentario.data }}</small>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="sem-comentario">Nenhum comentário ainda.</p>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('comentar', doc_id=doc.id) }}" class="comentario-form">
+                <textarea name="comentario" placeholder="Adicionar comentário..." required></textarea>
+                <button type="submit" class="btn-secondary">Comentar</button>
+            </form>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
