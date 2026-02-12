@@ -44,7 +44,11 @@
                 <h3>{{ doc.titulo }}</h3>
                 <small>{{ doc.data }}</small>
             </div>
-            <a href="{{ url_for('download', filename=doc.nome_arquivo) }}" class="btn-link">Visualizar</a>
+            <a href="{{ url_for('download', filename=doc.nome_arquivo) }}" 
+               class="btn-visualizar" target="_blank">
+               Visualizar Documento
+            </a>
+
         </div>
 
         {% if doc.descricao %}

@@ -1,0 +1,161 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f0fb;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    color: #4b0082;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.upload-area {
+    border: 2px dashed #9d7bff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.upload-area:hover {
+    background: #efe3ff;
+}
+
+.upload-area.selected {
+    border-color: #6a0dad;
+    background: #efe3ff;
+}
+
+.file-name {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-primary {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #4b0082;
+}
+
+.section-title {
+    margin-top: 40px;
+    color: #4b0082;
+}
+
+.document-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-link {
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.doc-description {
+    margin: 10px 0;
+    color: #555;
+}
+
+.comentarios {
+    margin-top: 15px;
+    background: #f8f4ff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.comentario-item {
+    background: #e8ddff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.comentario-form textarea {
+    height: 60px;
+}
+
+.btn-secondary {
+    background: #9d7bff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #6a0dad;
+}
+
+.sem-comentario {
+    color: #777;
+}
+
+.btn-visualizar {
+    background: #6a0dad;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    display: inline-block;
+}
+
+.btn-visualizar:hover {
+    background: #4b0082;
+}
+
