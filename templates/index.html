@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Documentação</title>
+    <title>Gestão de Documentos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -10,9 +10,8 @@
 <div class="container">
 
     <h1>Documentação</h1>
-    <p class="subtitle">Envie documentos </p>
+    <p class="subtitle">Envie seus documentos </p>
 
-    <!-- NOVO DOCUMENTO -->
     <div class="card">
         <h2>Novo Documento</h2>
 
@@ -27,13 +26,12 @@
             <input type="file" id="fileInput" name="file" hidden required onchange="showFileName(event)">
 
             <input type="text" name="titulo" placeholder="Título do documento" required>
-            <textarea name="descricao" placeholder="Descrição (opcional)"></textarea>
+            <textarea name="descricao" placeholder="Descrição"></textarea>
 
             <button type="submit" class="btn-primary">Enviar Documento</button>
         </form>
     </div>
 
-    <!-- LISTA DE DOCUMENTOS -->
     <h2 class="section-title">Documentos</h2>
 
     {% for doc in documentos %}
@@ -55,7 +53,7 @@
             <p class="doc-description">{{ doc.descricao }}</p>
         {% endif %}
 
-        <!-- HISTÓRICO DE COMENTÁRIOS -->
+
         <div class="comentarios">
             <h4>Histórico de Comentários</h4>
 
