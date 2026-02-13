@@ -71,8 +71,8 @@ python app.py
 A aplicação estará disponível em:
 http://127.0.0.1:5000
 
-## Regras Implementadas
-# Documentos
+# Regras Implementadas
+## Documentos
 Cada documento possui:
 - ID único
 - Título
@@ -81,7 +81,7 @@ Cada documento possui:
 - Data e hora de envio
 - Lista de comentários vinculados
 
-# Comentários
+## Comentários
 Cada comentário:
 - Está vinculado corretamente ao respectivo documento
 - Contém texto
