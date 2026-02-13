@@ -19,12 +19,40 @@ Aplicação web desenvolvida com **Flask (Python)** para envio, visualização e
 ## 🛠️ Tecnologias Utilizadas
 
 - Python 3  
-- Flask  
+- Flask
+- SQLite
 - Gunicorn  
 - HTML5  
 - CSS3  
 - JavaScript  
 - Render (Deploy)  
+
+---
+## 🗄️ Banco de Dados
+
+A aplicação utiliza **SQLite** como banco de dados relacional.
+
+O banco é criado automaticamente na primeira execução do projeto.
+
+### 📄 Tabela: `documentos`
+
+| Campo        | Tipo     | Descrição |
+|-------------|----------|-----------|
+| id          | INTEGER  | Chave primária (PK) |
+| titulo      | TEXT     | Título do documento |
+| descricao   | TEXT     | Descrição opcional |
+| nome_arquivo| TEXT     | Nome do arquivo salvo |
+| data        | TEXT     | Data e hora do envio |
+
+---
+### 💬 Tabela: `comentarios`
+
+| Campo          | Tipo     | Descrição |
+|---------------|----------|-----------|
+| id            | INTEGER  | Chave primária (PK) |
+| texto         | TEXT     | Conteúdo do comentário |
+| data          | TEXT     | Data e hora do comentário |
+| documento_id  | INTEGER  | Chave estrangeira (FK) |
 
 ---
 
@@ -33,6 +61,7 @@ Aplicação web desenvolvida com **Flask (Python)** para envio, visualização e
 gestao-de-documentos/  
 │  
 ├── app.py  
+├── database.db  
 ├── requirements.txt  
 ├── Procfile  
 │  
@@ -87,7 +116,7 @@ gunicorn app:app
 ## Documentos
 Cada documento possui:
 - ID único
-- Título
+- Título (obrigatório)
 - Descrição (opcional)
 - Nome do arquivo
 - Data e hora de envio
