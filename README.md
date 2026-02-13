@@ -52,7 +52,7 @@ gestao-de-documentos/
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+git clone https://github.com/iicaroll/Gestao-de-documentos.git
 cd SEU-REPOSITORIO
 ````
 ### 2️⃣ (Opcional) Crie um ambiente virtual
@@ -70,6 +70,18 @@ python app.py
 ````
 A aplicação estará disponível em:
 http://127.0.0.1:5000
+
+## ☁️ Deploy no Render
+Configuração utilizada:
+
+Build Command:
+```bash
+pip install -r requirements.txt
+```
+Start Command:
+```bash
+gunicorn app:app
+```
 
 # Regras Implementadas
 ## Documentos
