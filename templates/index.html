@@ -2,14 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Gestão de Documentos</title>
+    <title> Gestão de Documentos </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
 
-    <h1>Documentação</h1>
+    <h1> Gestão de Documentos</h1>
     <p class="subtitle">Envie seus documentos </p>
 
     <div class="card">
@@ -55,7 +55,7 @@
 
 
         <div class="comentarios">
-            <h4>Histórico de Comentários</h4>
+            <h4>Comentários</h4>
 
             {% if doc.comentarios %}
                 {% for comentario in doc.comentarios %}
